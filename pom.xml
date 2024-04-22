@@ -8,10 +8,10 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.valicha</groupId>
-	<artifactId>production</artifactId>
+	<groupId>com.app</groupId>
+	<artifactId>valicha</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>production</name>
+	<name>valicha</name>
 	<description>valicha-system</description>
 	<properties>
 		<java.version>17</java.version>

@@ -1,4 +1,4 @@
-package com.valicha.production.model;
+package com.valicha.production.sede.domain;
 
 public class Address {
     private String street;
