@@ -3,14 +3,15 @@ package com.valicha.production.moduloCrecimiento.domain;
 import com.valicha.production.sede.domain.Sede;
 import jakarta.persistence.*;
 
-import java.util.Set;
 
-
-
+@Entity
 public class ModuloCrecimiento {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
     private Sede sede_id;
+    @Basic
     private String codigo;
     private Double capacidad;
 
@@ -19,6 +20,9 @@ public class ModuloCrecimiento {
         this.sede_id = sede_id;
         this.codigo = codigo;
         this.capacidad = capacidad;
+    }
+
+    public ModuloCrecimiento() {
     }
 
     public Long getId() {

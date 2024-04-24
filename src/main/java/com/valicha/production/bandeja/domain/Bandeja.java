@@ -1,11 +1,16 @@
 package com.valicha.production.bandeja.domain;
 
 import com.valicha.production.almacen.domain.Almacen;
-import com.valicha.production.sede.domain.Sede;
+import jakarta.persistence.*;
 
+@Entity
 public class Bandeja {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
     private Almacen almacen_id;
+    @Basic
     private String codigo;
     private Double capacidad;
 
@@ -14,6 +19,9 @@ public class Bandeja {
         this.almacen_id = almacen_id;
         this.codigo = codigo;
         this.capacidad = capacidad;
+    }
+
+    public Bandeja() {
     }
 
     public Long getId() {

@@ -1,5 +1,7 @@
 package com.valicha.shared.domain;
 
+import jakarta.persistence.Entity;
+
 import java.util.Objects;
 
 public abstract class StringValueObject {
@@ -8,6 +10,8 @@ public abstract class StringValueObject {
     public StringValueObject(String value) {
         this.value = value;
     }
+
+
 
     public String value() {
         return value;

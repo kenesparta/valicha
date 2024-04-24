@@ -1,10 +1,16 @@
 package com.valicha.production.guarderia.domain;
 
 import com.valicha.production.sede.domain.Sede;
+import jakarta.persistence.*;
 
+@Entity
 public class Guarderia {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
     private Sede sede_id;
+    @Basic
     private String codigo;
     private Double capacidad;
 
@@ -13,6 +19,9 @@ public class Guarderia {
         this.sede_id = sede_id;
         this.codigo = codigo;
         this.capacidad = capacidad;
+    }
+
+    public Guarderia() {
     }
 
     public Long getId() {

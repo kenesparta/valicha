@@ -3,16 +3,19 @@ package com.valicha.production.sede.domain;
 import com.valicha.shared.domain.StringValueObject;
 import jakarta.persistence.*;
 
-
+@Entity
 public class Sede {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Embedded
     private StringValueObject name;
 
-
-
+    @OneToOne
     private Address address;
+
+    @Enumerated(EnumType.STRING)
     private LocationState state;
 
     public Sede(Long id, StringValueObject name, Address address, LocationState state) {
@@ -20,6 +23,9 @@ public class Sede {
         this.name = name;
         this.address = address;
         this.state = state;
+    }
+
+    public Sede() {
     }
 
     public StringValueObject getName() {

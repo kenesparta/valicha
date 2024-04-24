@@ -1,11 +1,30 @@
 package com.valicha.production.sede.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Basic
     private String street;
     private String region;
     private String provincia;
     private String distrito;
     private String ubigeo;
+
+    public Address(Long id, String street, String region, String provincia, String distrito, String ubigeo) {
+        this.id = id;
+        this.street = street;
+        this.region = region;
+        this.provincia = provincia;
+        this.distrito = distrito;
+        this.ubigeo = ubigeo;
+    }
+
+    public Address() {
+    }
 
     public String getStreet() {
         return street;

@@ -1,6 +1,7 @@
 package com.valicha.production.almacen.domain;
 
 
+import com.valicha.production.sede.domain.Sede;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,9 +9,11 @@ public class Almacen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-@Basic
-// private Sede sede_id;
-private String nombre;
+    @OneToOne
+   private Sede sede_id;
+
+    private String nombre;
+
     public Long getId() {
         return id;
     }
@@ -34,7 +37,6 @@ private String nombre;
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 
 
 }
